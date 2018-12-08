@@ -4,6 +4,7 @@ php_installation:
       - php7.2
       - libapache2-mod-php7.2
       - php-mysql
+      - php-fpm
 
 /etc/apache2/mods-available/php7.2.conf:
   file.managed:
@@ -15,7 +16,7 @@ php_installation:
 
 php.check:
  service.running:
-   - name: apache2
+   - name: nginx
    - watch:
      - file: /etc/apache2/mods-available/php7.2.conf
      - file: /home/xubuntu/public_html/index.php
