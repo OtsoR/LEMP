@@ -3,7 +3,7 @@ nginx:
 
 /etc/nginx/sites-available/default:
   file.managed:
-    - source: salt://nginx/default_userdir
+    - source: salt://nginx/default_userdir.conf
 
 /var/www/html/index.html:
  file.managed:
