@@ -1,2 +1,3 @@
 # LEMP
-This is a LEMP stack as a Salt installation + few other little installations such as Vlc and changing Xubuntu 18.04 terminal font bigger with Salt
+This is a LEMP stack as a Salt installation... Wrong this is a fail, i can't get the php to work with nginx
+
