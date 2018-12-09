@@ -5,9 +5,9 @@ php_installation:
       - php-mysql
       - php-fpm
 
-
+/etc/php/7.2/fpm/php.ini:
   file.managed:
-    - source: salt://LAMP/php//php.ini
+    - source: salt://php//php.ini
 
 /home/xubuntu/public_html/index.php:
   file.managed:
@@ -15,8 +15,8 @@ php_installation:
 
 php.check:
  service.running:
-   - name: nginx
+   - name: php7.2-fpm
    - watch:
-     - file: /etc/apache2/mods-available/php7.2.conf
      - file: /home/xubuntu/public_html/index.php
+     - file: /etc/php/7.0/fpm/php.ini
 
