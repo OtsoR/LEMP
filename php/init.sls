@@ -5,13 +5,13 @@ php_installation:
       - php-mysql
       - php-fpm
 
-/etc/apache2/mods-available/php7.2.conf:
+
   file.managed:
-    - source: salt://LAMP/php//php.conf
+    - source: salt://LAMP/php//php.ini
 
 /home/xubuntu/public_html/index.php:
   file.managed:
-    - source: salt://LAMP/php/default-index.php
+    - source: salt://php/index.php
 
 php.check:
  service.running:
