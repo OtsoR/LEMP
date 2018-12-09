@@ -1,0 +1,25 @@
+nginx:
+  pkg.installed
+
+/etc/nginx/sites-available/default:
+  file.managed:
+    - source: salt://nginx/default_userdir
+
+/var/www/html/index.html:
+ file.managed:
+   - source: salt://nginx/index.html
+
+/home/xubuntu/public_html:
+  file.managed:
+    - name: /home/xubuntu/public_html
+    - mode: 755
+    - makedirs: True
+
+nginx_service:
+  service.running:
+    - name: nginx
+    - watch:
+      - file: /etc/nginx/sites-available/default
+      
+
+
