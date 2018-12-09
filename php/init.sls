@@ -2,7 +2,6 @@ php_installation:
   pkg.installed:
     - pkgs:
       - php7.2
-      - libapache2-mod-php7.2
       - php-mysql
       - php-fpm
 
